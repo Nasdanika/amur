@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.nasdanika.common.EditorProvider" name="Editor provider" schema="schema/EditorProvider.exsd"/>
+   <extension-point id="org.nasdanika.common.TokenMarkerProvider" name="Token marker provider for JEdit Syntax" schema="schema/TokenMarkerProvider.exsd"/>
+   <extension-point id="HtmlRenderer" name="HTML Renderer" schema="schema/HtmlRenderer.exsd"/>
+
+   <extension
+         point="org.nasdanika.common.EditorProvider">
+      <provider
+            class="org.nasdanika.common.editorproviders.RSyntaxTextAreaProvider">
+      </provider>
+      <provider
+            class="org.nasdanika.common.editorproviders.JSyntaxPaneProvider">
+      </provider>
+      <provider
+            class="org.nasdanika.common.editorproviders.SourceViewerProvider">
+      </provider>
+      <provider
+            class="org.nasdanika.common.editorproviders.JEditTextAreaProvider"
+            name="org.nasdanika.common.provider.jedit"
+            priority="0">
+      </provider>
+      <provider
+            class="org.nasdanika.common.editorproviders.EKitProvider">
+      </provider>
+      <provider
+            class="org.nasdanika.common.editorproviders.JEditorPaneProvider">
+      </provider>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
+
+</plugin>
