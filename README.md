@@ -1,4 +1,4 @@
 amur
 ====
 
-Amur diagram editor
+Amur diagram editor.
