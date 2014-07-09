@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.nasdanika.amur.feature_0.1.0.qualifier.jar" id="org.nasdanika.amur.feature" version="0.1.0.qualifier">
+      <category name="org.nasdanika.amur.category"/>
+   </feature>
+   <category-def name="org.nasdanika.amur.category" label="Amur">
+      <description>
+         Amur diagram editor.
+      </description>
+   </category-def>
+</site>

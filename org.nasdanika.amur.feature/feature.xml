@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.nasdanika.amur.feature"
+      label="Amur"
+      version="0.1.0.qualifier"
+      provider-name="Nasdanika">
+
+   <description>
+      Amur Diagram Editor
+   </description>
+
+   <copyright>
+      Copyright (c) 2014 Nasdanika LLC. All rights reserved.
+   </copyright>
+
+   <license>
+      Eclipse Public License.
+   </license>
+
+   <plugin
+         id="org.nasdanika.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

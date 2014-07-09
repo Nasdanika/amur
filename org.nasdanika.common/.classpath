@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="lib/js.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/rsyntaxtextarea.jar" sourcepath="/RSyntaxTextArea/src"/>
+	<classpathentry exported="true" kind="lib" path="lib/autocomplete.jar" sourcepath="/AutoComplete/src"/>
+	<classpathentry exported="true" kind="lib" path="lib/language_support.jar" sourcepath="/RSTALanguageSupport/src"/>
+	<classpathentry exported="true" kind="lib" path="lib/ekit.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jsyntaxpane-0.9.5-b29.jar" sourcepath="/TechStack/jsyntaxpane/jsyntaxpane-read-only/jsyntaxpane/src/main/java"/>
+	<classpathentry exported="true" kind="lib" path="lib/rstaui.jar"/>
+	<classpathentry kind="src" path="src/"/>
+	<classpathentry kind="src" path="jedit-syntax-src/"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
