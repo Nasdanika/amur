@@ -13,7 +13,24 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.jface.action.IMenuManager;
-import org.nasdanika.amur.*;
+import org.nasdanika.amur.AmurFactory;
+import org.nasdanika.amur.AmurPackage;
+import org.nasdanika.amur.Call;
+import org.nasdanika.amur.Component;
+import org.nasdanika.amur.ComponentType;
+import org.nasdanika.amur.Composite;
+import org.nasdanika.amur.ConnectionSource;
+import org.nasdanika.amur.ConnectionTarget;
+import org.nasdanika.amur.CopyImplementationTypeFactory;
+import org.nasdanika.amur.ErrorHandler;
+import org.nasdanika.amur.ErrorTransition;
+import org.nasdanika.amur.Gateway;
+import org.nasdanika.amur.ImplementationTypeCategory;
+import org.nasdanika.amur.InputPort;
+import org.nasdanika.amur.Node;
+import org.nasdanika.amur.OutputPort;
+import org.nasdanika.amur.Reference;
+import org.nasdanika.amur.Transition;
 
 
 /**

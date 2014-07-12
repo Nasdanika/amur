@@ -46,9 +46,6 @@ import org.nasdanika.amur.Reference;
 import org.nasdanika.amur.Transition;
 import org.nasdanika.amur.util.AmurValidator;
 
-import org.nasdanika.licensing.Licenseable;
-import org.nasdanika.party.PartyPackage;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -222,13 +219,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass licenseableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum componentTypeEEnum = null;
 
 	/**
@@ -290,9 +280,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		AmurPackageImpl theAmurPackage = (AmurPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AmurPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AmurPackageImpl());
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		PartyPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theAmurPackage.createPackageContents();
@@ -359,7 +346,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Authors() {
+	public EReference getComponent_ImplementationType() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -368,7 +355,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_ImplementationType() {
+	public EReference getComponent_Parent() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -377,17 +364,8 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_Parent() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getComponent_CodeGenerationResource() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -396,7 +374,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_DocumentationGenerationResource() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -405,7 +383,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_ResourcePath() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -414,7 +392,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_GenerationTimeout() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -423,7 +401,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_GenerationProperties() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -432,7 +410,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_GenerationServices() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -441,7 +419,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_GenerationArguments() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -450,7 +428,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * @generated
 	 */
 	public EAttribute getComponent_GenerationCode() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -917,15 +895,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLicenseable() {
-		return licenseableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getComponentType() {
 		return componentTypeEEnum;
 	}
@@ -980,7 +949,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		createEAttribute(componentEClass, COMPONENT__NAME);
 		createEAttribute(componentEClass, COMPONENT__DESCRIPTION);
 		createEAttribute(componentEClass, COMPONENT__ID);
-		createEReference(componentEClass, COMPONENT__AUTHORS);
 		createEReference(componentEClass, COMPONENT__IMPLEMENTATION_TYPE);
 		createEReference(componentEClass, COMPONENT__PARENT);
 		createEAttribute(componentEClass, COMPONENT__CODE_GENERATION_RESOURCE);
@@ -1065,8 +1033,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		createEAttribute(copyImplementationTypeFactoryEClass, COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR);
 		createEAttribute(copyImplementationTypeFactoryEClass, COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO);
 
-		licenseableEClass = createEClass(LICENSEABLE);
-
 		// Create enums
 		componentTypeEEnum = createEEnum(COMPONENT_TYPE);
 
@@ -1098,15 +1064,11 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentEClass.getESuperTypes().add(thePartyPackage.getCommonObject());
 		compositeEClass.getESuperTypes().add(this.getComponent());
 		connectionEClass.getESuperTypes().add(this.getComponent());
 		connectionSourceEClass.getESuperTypes().add(this.getComponent());
@@ -1132,7 +1094,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		errorTransitionEClass.getESuperTypes().add(this.getConnection());
 		callEClass.getESuperTypes().add(this.getConnection());
 		referenceEClass.getESuperTypes().add(this.getConnection());
-		implementationTypeEClass.getESuperTypes().add(this.getLicenseable());
 		implementationTypeCategoryEClass.getESuperTypes().add(this.getImplementationTypeDescriptor());
 		implementationTypeDescriptorEClass.getESuperTypes().add(this.getImplementationTypeProvider());
 		implementationTypeFactoryEClass.getESuperTypes().add(this.getImplementationTypeDescriptor());
@@ -1143,7 +1104,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Description(), ecorePackage.getEString(), "description", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Id(), ecorePackage.getEString(), "id", "", 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_Authors(), thePartyPackage.getParty(), null, "authors", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ImplementationType(), this.getImplementationType(), this.getImplementationType_Owner(), "implementationType", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Parent(), this.getComposite(), this.getComposite_Children(), "parent", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_CodeGenerationResource(), ecorePackage.getEString(), "codeGenerationResource", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1232,8 +1192,7 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(implementationTypeEClass, ecorePackage.getEBoolean(), "isComposite", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getNode(), "node", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(implementationTypeEClass, ecorePackage.getEBoolean(), "isComposite", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(implementationTypeEClass, null, "destroy", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1268,8 +1227,6 @@ public class AmurPackageImpl extends EPackageImpl implements AmurPackage {
 		initEReference(getCopyImplementationTypeFactory_ImplementationTypeReference(), this.getImplementationType(), null, "implementationTypeReference", null, 0, 1, CopyImplementationTypeFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCopyImplementationTypeFactory_Selector(), ecorePackage.getEString(), "selector", null, 0, 1, CopyImplementationTypeFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCopyImplementationTypeFactory_AppliesTo(), this.getComponentType(), "appliesTo", null, 0, -1, CopyImplementationTypeFactory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(licenseableEClass, Licenseable.class, "Licenseable", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentTypeEEnum, ComponentType.class, "ComponentType");

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="implementation_type_action" name="Implementation Type Action" schema="schema/implementation_type_action.exsd"/>
+   <extension-point id="component_action" name="Component Action" schema="schema/component_action.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="urn:org.nasdanika.amur"
+            class="org.nasdanika.amur.AmurPackage"
+            genModel="model/amur.genmodel"/>
+   </extension>
+
+</plugin>

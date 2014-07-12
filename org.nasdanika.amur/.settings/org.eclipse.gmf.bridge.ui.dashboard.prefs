@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.nasdanika.amur/model/amur.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.nasdanika.amur/model/amur.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.nasdanika.amur/model/amur.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.nasdanika.amur/model/amur.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.nasdanika.amur/model/amur.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.nasdanika.amur/model/amur.gmftool

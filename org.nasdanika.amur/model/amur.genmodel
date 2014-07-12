@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.amur/src" creationIcons="false"
+    modelPluginID="org.nasdanika.amur" modelName="Amur" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" reflectiveDelegation="true"
+    importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>amur.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Amur" basePackage="org.nasdanika" disposableProviderFactory="true"
+      fileExtensions="amur" ecorePackage="amur.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="amur.ecore#//ComponentType">
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Node"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/InputPort"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/OutputPort"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Gateway"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Transition"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/ErrorTransition"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/ErrorHandler"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Call"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Reference"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Container"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Component"/>
+      <genEnumLiterals ecoreEnumLiteral="amur.ecore#//ComponentType/Composite"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="amur.ecore#//ClassLoader"/>
+    <genDataTypes ecoreDataType="amur.ecore#//IMenuManager"/>
+    <genClasses ecoreClass="amur.ecore#//Component">
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//Component/name"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//Component/description"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="General"
+          ecoreFeature="ecore:EAttribute amur.ecore#//Component/id"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EReference amur.ecore#//Component/implementationType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference amur.ecore#//Component/parent"/>
+      <genFeatures createChild="false" propertyCategory="Generation" ecoreFeature="ecore:EAttribute amur.ecore#//Component/codeGenerationResource">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" ecoreFeature="ecore:EAttribute amur.ecore#//Component/documentationGenerationResource">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" ecoreFeature="ecore:EAttribute amur.ecore#//Component/resourcePath">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" ecoreFeature="ecore:EAttribute amur.ecore#//Component/generationTimeout">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" propertyMultiLine="true"
+          ecoreFeature="ecore:EAttribute amur.ecore#//Component/generationProperties">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" propertyMultiLine="true"
+          ecoreFeature="ecore:EAttribute amur.ecore#//Component/generationServices">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" propertyDescription=""
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute amur.ecore#//Component/generationArguments">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures createChild="false" propertyCategory="Generation" propertyMultiLine="true"
+          ecoreFeature="ecore:EAttribute amur.ecore#//Component/generationCode">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genOperations ecoreOperation="amur.ecore#//Component/validate">
+        <genParameters ecoreParameter="amur.ecore#//Component/validate/diagnostics"/>
+        <genParameters ecoreParameter="amur.ecore#//Component/validate/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="amur.ecore#//Component/createGenerationCommand">
+        <genParameters ecoreParameter="amur.ecore#//Component/createGenerationCommand/key"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//Composite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference amur.ecore#//Composite/children"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//Connection">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference amur.ecore#//Connection/source"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference amur.ecore#//Connection/target"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//AbstractConnectionSource">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference amur.ecore#//AbstractConnectionSource/outboundConnections"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//AbstractConnectionTarget">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference amur.ecore#//AbstractConnectionTarget/inboundConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//ConnectionSource"/>
+    <genClasses ecoreClass="amur.ecore#//ConnectionTarget"/>
+    <genClasses ecoreClass="amur.ecore#//Node"/>
+    <genClasses ecoreClass="amur.ecore#//InputPort"/>
+    <genClasses ecoreClass="amur.ecore#//OutputPort"/>
+    <genClasses ecoreClass="amur.ecore#//Gateway">
+      <genFeatures notify="false" createChild="false" propertyCategory="General" propertyDescription=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference amur.ecore#//Gateway/mergeSource"/>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//ErrorHandler">
+      <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute amur.ecore#//ErrorHandler/errorType"/>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//Container"/>
+    <genClasses ecoreClass="amur.ecore#//Transition">
+      <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute amur.ecore#//Transition/order"/>
+      <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute amur.ecore#//Transition/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//ErrorTransition">
+      <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute amur.ecore#//ErrorTransition/errorType"/>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//Call"/>
+    <genClasses ecoreClass="amur.ecore#//Reference">
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//Reference/cache"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//Reference/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//ImplementationType">
+      <genFeatures property="None" createChild="false" propertyCategory="General"
+          propertyDescription="" ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationType/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="General"
+          propertyDescription="" ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationType/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference amur.ecore#//ImplementationType/owner"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationType/description"/>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationType/init">
+        <genParameters ecoreParameter="amur.ecore#//ImplementationType/init/prevImplementationType"/>
+      </genOperations>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationType/contributeToPopupMenu">
+        <genParameters ecoreParameter="amur.ecore#//ImplementationType/contributeToPopupMenu/menu"/>
+      </genOperations>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationType/validate">
+        <genParameters ecoreParameter="amur.ecore#//ImplementationType/validate/diagnostics"/>
+        <genParameters ecoreParameter="amur.ecore#//ImplementationType/validate/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationType/isComposite"/>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationType/destroy"/>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//ImplementationTypeCategory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference amur.ecore#//ImplementationTypeCategory/children"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="General" propertyDescription=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference amur.ecore#//ImplementationTypeCategory/externalSiblings"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//ImplementationTypeDescriptor">
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationTypeDescriptor/id"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationTypeDescriptor/name"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationTypeDescriptor/description"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationTypeDescriptor/keywords"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference amur.ecore#//ImplementationTypeDescriptor/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//ImplementationTypeFactory">
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationTypeFactory/version"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//ImplementationTypeFactory/specializes"/>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationTypeFactory/createImplementationType">
+        <genParameters ecoreParameter="amur.ecore#//ImplementationTypeFactory/createImplementationType/modelElement"/>
+      </genOperations>
+      <genOperations ecoreOperation="amur.ecore#//ImplementationTypeFactory/isApplicable">
+        <genParameters ecoreParameter="amur.ecore#//ImplementationTypeFactory/isApplicable/component"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="amur.ecore#//ImplementationTypeProvider">
+      <genOperations ecoreOperation="amur.ecore#//ImplementationTypeProvider/getImplementationTypeFactories">
+        <genParameters ecoreParameter="amur.ecore#//ImplementationTypeProvider/getImplementationTypeFactories/modelElement"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="amur.ecore#//CopyImplementationTypeFactory">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertyDescription="" ecoreFeature="ecore:EReference amur.ecore#//CopyImplementationTypeFactory/implementationType"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="General" propertySortChoices="true"
+          ecoreFeature="ecore:EReference amur.ecore#//CopyImplementationTypeFactory/implementationTypeReference"/>
+      <genFeatures createChild="false" propertyCategory="General" propertyDescription=""
+          ecoreFeature="ecore:EAttribute amur.ecore#//CopyImplementationTypeFactory/selector"/>
+      <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute amur.ecore#//CopyImplementationTypeFactory/appliesTo"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -6,13 +6,9 @@
  */
 package org.nasdanika.amur.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.nasdanika.amur.AmurException;
@@ -59,66 +55,6 @@ import org.nasdanika.amur.Transition;
  */
 public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements CopyImplementationTypeFactory {
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVersion()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VERSION_EDEFAULT = null;
-
-	/**
-	 * The default value of the '{@link #getSpecializes() <em>Specializes</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSpecializes()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SPECIALIZES_EDEFAULT = null;
-
-	/**
-	 * The default value of the '{@link #getSelector() <em>Selector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelector()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SELECTOR_EDEFAULT = null;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -153,7 +89,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public String getId() {
-		return (String)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__ID, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__ID, true, true);
+		return (String)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__ID, true);
 	}
 
 	/**
@@ -162,7 +98,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setId(String newId) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__ID, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__ID, newId);
+		eSet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__ID, newId);
 	}
 
 	/**
@@ -171,7 +107,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public String getName() {
-		return (String)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__NAME, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__NAME, true, true);
+		return (String)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__NAME, true);
 	}
 
 	/**
@@ -180,7 +116,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setName(String newName) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__NAME, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__NAME, newName);
+		eSet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__NAME, newName);
 	}
 
 	/**
@@ -189,7 +125,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public String getDescription() {
-		return (String)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__DESCRIPTION, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__DESCRIPTION, true, true);
+		return (String)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__DESCRIPTION, true);
 	}
 
 	/**
@@ -198,7 +134,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__DESCRIPTION, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__DESCRIPTION, newDescription);
+		eSet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -208,7 +144,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 */
 	@SuppressWarnings("unchecked")
 	public EList<String> getKeywords() {
-		return (EList<String>)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__KEYWORDS, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__KEYWORDS, true, true);
+		return (EList<String>)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__KEYWORDS, true);
 	}
 
 	/**
@@ -217,17 +153,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public ImplementationTypeCategory getParent() {
-		return (ImplementationTypeCategory)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__PARENT, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetParent(ImplementationTypeCategory newParent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParent, AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT, msgs);
-		return msgs;
+		return (ImplementationTypeCategory)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__PARENT, true);
 	}
 
 	/**
@@ -236,7 +162,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setParent(ImplementationTypeCategory newParent) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT, AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__PARENT, newParent);
+		eSet(AmurPackage.Literals.IMPLEMENTATION_TYPE_DESCRIPTOR__PARENT, newParent);
 	}
 
 	/**
@@ -245,7 +171,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public String getVersion() {
-		return (String)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__VERSION, AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__VERSION, true, true);
+		return (String)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__VERSION, true);
 	}
 
 	/**
@@ -254,7 +180,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__VERSION, AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__VERSION, newVersion);
+		eSet(AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__VERSION, newVersion);
 	}
 
 	/**
@@ -263,7 +189,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public String getSpecializes() {
-		return (String)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES, AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES, true, true);
+		return (String)eGet(AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES, true);
 	}
 
 	/**
@@ -272,7 +198,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setSpecializes(String newSpecializes) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES, AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES, newSpecializes);
+		eSet(AmurPackage.Literals.IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES, newSpecializes);
 	}
 
 	/**
@@ -281,17 +207,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public ImplementationType getImplementationType() {
-		return (ImplementationType)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetImplementationType(ImplementationType newImplementationType, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newImplementationType, AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, msgs);
-		return msgs;
+		return (ImplementationType)eGet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, true);
 	}
 
 	/**
@@ -300,7 +216,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setImplementationType(ImplementationType newImplementationType) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, newImplementationType);
+		eSet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE, newImplementationType);
 	}
 
 	/**
@@ -309,16 +225,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public ImplementationType getImplementationTypeReference() {
-		return (ImplementationType)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ImplementationType basicGetImplementationTypeReference() {
-		return (ImplementationType)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, false, true);
+		return (ImplementationType)eGet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, true);
 	}
 
 	/**
@@ -327,7 +234,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setImplementationTypeReference(ImplementationType newImplementationTypeReference) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, newImplementationTypeReference);
+		eSet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE, newImplementationTypeReference);
 	}
 
 	/**
@@ -336,7 +243,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public String getSelector() {
-		return (String)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR, true, true);
+		return (String)eGet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR, true);
 	}
 
 	/**
@@ -345,7 +252,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 * @generated
 	 */
 	public void setSelector(String newSelector) {
-		eDynamicSet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR, newSelector);
+		eSet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR, newSelector);
 	}
 
 	/**
@@ -355,7 +262,7 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 	 */
 	@SuppressWarnings("unchecked")
 	public EList<ComponentType> getAppliesTo() {
-		return (EList<ComponentType>)eDynamicGet(AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO, AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO, true, true);
+		return (EList<ComponentType>)eGet(AmurPackage.Literals.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO, true);
 	}
 
 	/**
@@ -506,214 +413,6 @@ public class CopyImplementationTypeFactoryImpl extends CDOObjectImpl implements 
 			return (EList<ImplementationTypeFactory>) ECollections.singletonEList((ImplementationTypeFactory) this);
 		}
 		return ECollections.emptyEList();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParent((ImplementationTypeCategory)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				return basicSetParent(null, msgs);
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE:
-				return basicSetImplementationType(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				return eInternalContainer().eInverseRemove(this, AmurPackage.IMPLEMENTATION_TYPE_CATEGORY__CHILDREN, ImplementationTypeCategory.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__ID:
-				return getId();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__NAME:
-				return getName();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__DESCRIPTION:
-				return getDescription();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__KEYWORDS:
-				return getKeywords();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				return getParent();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__VERSION:
-				return getVersion();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES:
-				return getSpecializes();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE:
-				return getImplementationType();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE:
-				if (resolve) return getImplementationTypeReference();
-				return basicGetImplementationTypeReference();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR:
-				return getSelector();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO:
-				return getAppliesTo();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__ID:
-				setId((String)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__NAME:
-				setName((String)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__KEYWORDS:
-				getKeywords().clear();
-				getKeywords().addAll((Collection<? extends String>)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				setParent((ImplementationTypeCategory)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__VERSION:
-				setVersion((String)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES:
-				setSpecializes((String)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE:
-				setImplementationType((ImplementationType)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE:
-				setImplementationTypeReference((ImplementationType)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR:
-				setSelector((String)newValue);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO:
-				getAppliesTo().clear();
-				getAppliesTo().addAll((Collection<? extends ComponentType>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__KEYWORDS:
-				getKeywords().clear();
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				setParent((ImplementationTypeCategory)null);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES:
-				setSpecializes(SPECIALIZES_EDEFAULT);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE:
-				setImplementationType((ImplementationType)null);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE:
-				setImplementationTypeReference((ImplementationType)null);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR:
-				setSelector(SELECTOR_EDEFAULT);
-				return;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO:
-				getAppliesTo().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__ID:
-				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__KEYWORDS:
-				return !getKeywords().isEmpty();
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__PARENT:
-				return getParent() != null;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__VERSION:
-				return VERSION_EDEFAULT == null ? getVersion() != null : !VERSION_EDEFAULT.equals(getVersion());
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SPECIALIZES:
-				return SPECIALIZES_EDEFAULT == null ? getSpecializes() != null : !SPECIALIZES_EDEFAULT.equals(getSpecializes());
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE:
-				return getImplementationType() != null;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__IMPLEMENTATION_TYPE_REFERENCE:
-				return basicGetImplementationTypeReference() != null;
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__SELECTOR:
-				return SELECTOR_EDEFAULT == null ? getSelector() != null : !SELECTOR_EDEFAULT.equals(getSelector());
-			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO:
-				return !getAppliesTo().isEmpty();
-		}
-		return super.eIsSet(featureID);
 	}
 
 } //CopyImplementationTypeFactoryImpl

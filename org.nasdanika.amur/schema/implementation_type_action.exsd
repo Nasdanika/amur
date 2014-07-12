@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.nasdanika.amur" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="org.nasdanika.amur" id="implementation_type_action" name="Implementation Type Action"/>
+      </appInfo>
+      <documentation>
+         Actions contributed to element context menu by implementation type.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="implementation_type_action" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="implementation_type_action_with_progress" minOccurs="0" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="implementation_type_action">
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Implementation class.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.nasdanika.amur.ImplementationTypeAction"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Action name (menu label)
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Action id unique for implementation type.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="implementationType" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Implementation type this action applies to.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.nasdanika.amur.ImplementationType"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="component" type="string">
+            <annotation>
+               <documentation>
+                  Owning component for the target implementation type.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.nasdanika.amur.Component"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="selector" type="string">
+            <annotation>
+               <documentation>
+                  JavaScript expression which shall evaluate to true for the action to appear in the menu.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="implementation_type_action_with_progress">
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Implementation class.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.nasdanika.amur.ImplementationTypeActionWithProgress"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Action name (menu label)
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Action id unique for implementation type.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="implementationType" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Implementation type this action applies to.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.nasdanika.amur.ImplementationType"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="component" type="string">
+            <annotation>
+               <documentation>
+                  Owning component for the target implementation type.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.nasdanika.amur.Component"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="selector" type="string">
+            <annotation>
+               <documentation>
+                  JavaScript expression which shall evaluate to true for the action to appear in the menu.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Property of Nasdanika, all rights reserved.
+      </documentation>
+   </annotation>
+
+</schema>

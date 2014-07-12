@@ -14,9 +14,31 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.jface.action.IMenuManager;
-import org.nasdanika.amur.*;
-
-import org.nasdanika.licensing.Licenseable;
+import org.nasdanika.amur.AbstractConnectionSource;
+import org.nasdanika.amur.AbstractConnectionTarget;
+import org.nasdanika.amur.AmurPackage;
+import org.nasdanika.amur.Call;
+import org.nasdanika.amur.Component;
+import org.nasdanika.amur.ComponentType;
+import org.nasdanika.amur.Composite;
+import org.nasdanika.amur.Connection;
+import org.nasdanika.amur.ConnectionSource;
+import org.nasdanika.amur.ConnectionTarget;
+import org.nasdanika.amur.Container;
+import org.nasdanika.amur.CopyImplementationTypeFactory;
+import org.nasdanika.amur.ErrorHandler;
+import org.nasdanika.amur.ErrorTransition;
+import org.nasdanika.amur.Gateway;
+import org.nasdanika.amur.ImplementationType;
+import org.nasdanika.amur.ImplementationTypeCategory;
+import org.nasdanika.amur.ImplementationTypeDescriptor;
+import org.nasdanika.amur.ImplementationTypeFactory;
+import org.nasdanika.amur.ImplementationTypeProvider;
+import org.nasdanika.amur.InputPort;
+import org.nasdanika.amur.Node;
+import org.nasdanika.amur.OutputPort;
+import org.nasdanika.amur.Reference;
+import org.nasdanika.amur.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,8 +174,6 @@ public class AmurValidator extends EObjectValidator {
 				return validateImplementationTypeProvider((ImplementationTypeProvider)value, diagnostics, context);
 			case AmurPackage.COPY_IMPLEMENTATION_TYPE_FACTORY:
 				return validateCopyImplementationTypeFactory((CopyImplementationTypeFactory)value, diagnostics, context);
-			case AmurPackage.LICENSEABLE:
-				return validateLicenseable((Licenseable)value, diagnostics, context);
 			case AmurPackage.COMPONENT_TYPE:
 				return validateComponentType((ComponentType)value, diagnostics, context);
 			case AmurPackage.CLASS_LOADER:
@@ -552,16 +572,7 @@ public class AmurValidator extends EObjectValidator {
 		return validate_EveryDefaultConstraint((EObject)copyImplementationTypeFactory, diagnostics, context);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLicenseable(Licenseable licenseable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint((EObject)licenseable, diagnostics, context);
-	}
-
-//	/**
+	//	/**
 //	 * <!-- begin-user-doc -->
 //	 * <!-- end-user-doc -->
 //	 * @generated

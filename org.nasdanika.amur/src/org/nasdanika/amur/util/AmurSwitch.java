@@ -9,10 +9,30 @@ package org.nasdanika.amur.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.nasdanika.amur.*;
-
-import org.nasdanika.licensing.Licenseable;
-import org.nasdanika.party.CommonObject;
+import org.nasdanika.amur.AbstractConnectionSource;
+import org.nasdanika.amur.AbstractConnectionTarget;
+import org.nasdanika.amur.AmurPackage;
+import org.nasdanika.amur.Call;
+import org.nasdanika.amur.Component;
+import org.nasdanika.amur.Composite;
+import org.nasdanika.amur.Connection;
+import org.nasdanika.amur.ConnectionSource;
+import org.nasdanika.amur.ConnectionTarget;
+import org.nasdanika.amur.Container;
+import org.nasdanika.amur.CopyImplementationTypeFactory;
+import org.nasdanika.amur.ErrorHandler;
+import org.nasdanika.amur.ErrorTransition;
+import org.nasdanika.amur.Gateway;
+import org.nasdanika.amur.ImplementationType;
+import org.nasdanika.amur.ImplementationTypeCategory;
+import org.nasdanika.amur.ImplementationTypeDescriptor;
+import org.nasdanika.amur.ImplementationTypeFactory;
+import org.nasdanika.amur.ImplementationTypeProvider;
+import org.nasdanika.amur.InputPort;
+import org.nasdanika.amur.Node;
+import org.nasdanika.amur.OutputPort;
+import org.nasdanika.amur.Reference;
+import org.nasdanika.amur.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +94,6 @@ public class AmurSwitch<T> extends Switch<T> {
 			case AmurPackage.COMPONENT: {
 				Component component = (Component)theEObject;
 				T result = caseComponent(component);
-				if (result == null) result = caseCommonObject(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -82,7 +101,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				Composite composite = (Composite)theEObject;
 				T result = caseComposite(composite);
 				if (result == null) result = caseComponent(composite);
-				if (result == null) result = caseCommonObject(composite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -90,7 +108,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				Connection connection = (Connection)theEObject;
 				T result = caseConnection(connection);
 				if (result == null) result = caseComponent(connection);
-				if (result == null) result = caseCommonObject(connection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -111,7 +128,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseConnectionSource(connectionSource);
 				if (result == null) result = caseComponent(connectionSource);
 				if (result == null) result = caseAbstractConnectionSource(connectionSource);
-				if (result == null) result = caseCommonObject(connectionSource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,7 +136,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseConnectionTarget(connectionTarget);
 				if (result == null) result = caseComponent(connectionTarget);
 				if (result == null) result = caseAbstractConnectionTarget(connectionTarget);
-				if (result == null) result = caseCommonObject(connectionTarget);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,7 +146,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAbstractConnectionSource(node);
 				if (result == null) result = caseAbstractConnectionTarget(node);
 				if (result == null) result = caseComponent(node);
-				if (result == null) result = caseCommonObject(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,7 +154,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseInputPort(inputPort);
 				if (result == null) result = caseComponent(inputPort);
 				if (result == null) result = caseAbstractConnectionSource(inputPort);
-				if (result == null) result = caseCommonObject(inputPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -149,7 +162,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseOutputPort(outputPort);
 				if (result == null) result = caseComponent(outputPort);
 				if (result == null) result = caseAbstractConnectionTarget(outputPort);
-				if (result == null) result = caseCommonObject(outputPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -159,7 +171,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				if (result == null) result = caseComponent(gateway);
 				if (result == null) result = caseAbstractConnectionSource(gateway);
 				if (result == null) result = caseAbstractConnectionTarget(gateway);
-				if (result == null) result = caseCommonObject(gateway);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -168,7 +179,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseErrorHandler(errorHandler);
 				if (result == null) result = caseComponent(errorHandler);
 				if (result == null) result = caseAbstractConnectionSource(errorHandler);
-				if (result == null) result = caseCommonObject(errorHandler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -179,7 +189,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAbstractConnectionSource(container);
 				if (result == null) result = caseAbstractConnectionTarget(container);
 				if (result == null) result = caseComponent(container);
-				if (result == null) result = caseCommonObject(container);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,7 +197,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseTransition(transition);
 				if (result == null) result = caseConnection(transition);
 				if (result == null) result = caseComponent(transition);
-				if (result == null) result = caseCommonObject(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,7 +205,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseErrorTransition(errorTransition);
 				if (result == null) result = caseConnection(errorTransition);
 				if (result == null) result = caseComponent(errorTransition);
-				if (result == null) result = caseCommonObject(errorTransition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,7 +213,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseCall(call);
 				if (result == null) result = caseConnection(call);
 				if (result == null) result = caseComponent(call);
-				if (result == null) result = caseCommonObject(call);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -215,14 +221,12 @@ public class AmurSwitch<T> extends Switch<T> {
 				T result = caseReference(reference);
 				if (result == null) result = caseConnection(reference);
 				if (result == null) result = caseComponent(reference);
-				if (result == null) result = caseCommonObject(reference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AmurPackage.IMPLEMENTATION_TYPE: {
 				ImplementationType implementationType = (ImplementationType)theEObject;
 				T result = caseImplementationType(implementationType);
-				if (result == null) result = caseLicenseable(implementationType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -261,12 +265,6 @@ public class AmurSwitch<T> extends Switch<T> {
 				if (result == null) result = caseImplementationTypeFactory(copyImplementationTypeFactory);
 				if (result == null) result = caseImplementationTypeDescriptor(copyImplementationTypeFactory);
 				if (result == null) result = caseImplementationTypeProvider(copyImplementationTypeFactory);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AmurPackage.LICENSEABLE: {
-				Licenseable licenseable = (Licenseable)theEObject;
-				T result = caseLicenseable(licenseable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -619,20 +617,7 @@ public class AmurSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Licenseable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Licenseable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLicenseable(Licenseable object) {
-		return null;
-	}
+	
 
 //	/**
 //	 * Returns the result of interpreting the object as an instance of '<em>Generation Command</em>'.
@@ -648,21 +633,6 @@ public class AmurSwitch<T> extends Switch<T> {
 //	public <V> T caseGenerationCommand(GenerationCommand<V> object) {
 //		return null;
 //	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Common Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Common Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommonObject(CommonObject object) {
-		return null;
-	}
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.

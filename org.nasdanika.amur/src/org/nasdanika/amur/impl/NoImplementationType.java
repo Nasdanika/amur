@@ -6,24 +6,16 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
+import org.eclipse.emf.validation.internal.modeled.model.validation.Feature;
 import org.eclipse.jface.action.IMenuManager;
 import org.nasdanika.amur.Component;
 import org.nasdanika.amur.ImplementationType;
-import org.nasdanika.amur.Node;
-
-import org.nasdanika.licensing.Feature;
 
 public class NoImplementationType extends CDOObjectImpl implements ImplementationType {
 
 	private String description;
 	private String name = "No implementation type";
 
-	@Override
-	public List<Feature> getFeatures() {
-		// NOP
-		return Collections.emptyList();
-	}
-	
 	@Override
 	public String toString() {
 		return getName();
@@ -50,7 +42,6 @@ public class NoImplementationType extends CDOObjectImpl implements Implementatio
 		// NOP
 
 	}
-
 
 	@Override
 	public void init(ImplementationType prevImplementationType) {

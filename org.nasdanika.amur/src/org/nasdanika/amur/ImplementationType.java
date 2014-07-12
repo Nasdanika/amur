@@ -13,8 +13,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.jface.action.IMenuManager;
 import org.nasdanika.amur.impl.NoImplementationType;
 
-import org.nasdanika.licensing.Licenseable;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Implementation Type</b></em>'.
@@ -35,11 +33,11 @@ import org.nasdanika.licensing.Licenseable;
  * </p>
  *
  * @see org.nasdanika.amur.AmurPackage#getImplementationType()
- * @model interface="true" abstract="true" superTypes="org.nasdanika.amur.Licenseable"
+ * @model interface="true" abstract="true"
  * @extends CDOObject
  * @generated
  */
-public interface ImplementationType extends CDOObject, Licenseable {
+public interface ImplementationType extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -196,7 +194,7 @@ public interface ImplementationType extends CDOObject, Licenseable {
 	 * <!-- begin-model-doc -->
 	 * If this method returns true, double-click on the node opens a sub-diagram.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model kind="operation"
 	 * @generated
 	 */
 	boolean isComposite();

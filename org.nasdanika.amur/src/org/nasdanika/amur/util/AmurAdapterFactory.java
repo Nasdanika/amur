@@ -10,10 +10,30 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.nasdanika.amur.*;
-
-import org.nasdanika.licensing.Licenseable;
-import org.nasdanika.party.CommonObject;
+import org.nasdanika.amur.AbstractConnectionSource;
+import org.nasdanika.amur.AbstractConnectionTarget;
+import org.nasdanika.amur.AmurPackage;
+import org.nasdanika.amur.Call;
+import org.nasdanika.amur.Component;
+import org.nasdanika.amur.Composite;
+import org.nasdanika.amur.Connection;
+import org.nasdanika.amur.ConnectionSource;
+import org.nasdanika.amur.ConnectionTarget;
+import org.nasdanika.amur.Container;
+import org.nasdanika.amur.CopyImplementationTypeFactory;
+import org.nasdanika.amur.ErrorHandler;
+import org.nasdanika.amur.ErrorTransition;
+import org.nasdanika.amur.Gateway;
+import org.nasdanika.amur.ImplementationType;
+import org.nasdanika.amur.ImplementationTypeCategory;
+import org.nasdanika.amur.ImplementationTypeDescriptor;
+import org.nasdanika.amur.ImplementationTypeFactory;
+import org.nasdanika.amur.ImplementationTypeProvider;
+import org.nasdanika.amur.InputPort;
+import org.nasdanika.amur.Node;
+import org.nasdanika.amur.OutputPort;
+import org.nasdanika.amur.Reference;
+import org.nasdanika.amur.Transition;
 
 /**
  * <!-- begin-user-doc -->
@@ -162,14 +182,6 @@ public class AmurAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCopyImplementationTypeFactory(CopyImplementationTypeFactory object) {
 				return createCopyImplementationTypeFactoryAdapter();
-			}
-			@Override
-			public Adapter caseLicenseable(Licenseable object) {
-				return createLicenseableAdapter();
-			}
-			@Override
-			public Adapter caseCommonObject(CommonObject object) {
-				return createCommonObjectAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -510,34 +522,6 @@ public class AmurAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCopyImplementationTypeFactoryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.licensing.Licenseable <em>Licenseable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.licensing.Licenseable
-	 * @generated
-	 */
-	public Adapter createLicenseableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.party.CommonObject <em>Common Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.party.CommonObject
-	 * @generated
-	 */
-	public Adapter createCommonObjectAdapter() {
 		return null;
 	}
 

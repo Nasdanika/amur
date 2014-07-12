@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.nasdanika.party.PartyPackage;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -77,22 +75,13 @@ public interface AmurPackage extends EPackage {
 	int COMPONENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__ROLES = PartyPackage.COMMON_OBJECT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__NAME = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 0;
+	int COMPONENT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -101,7 +90,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__DESCRIPTION = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 1;
+	int COMPONENT__DESCRIPTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -110,16 +99,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__ID = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__AUTHORS = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 3;
+	int COMPONENT__ID = 2;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -128,7 +108,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__IMPLEMENTATION_TYPE = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 4;
+	int COMPONENT__IMPLEMENTATION_TYPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -137,7 +117,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PARENT = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 5;
+	int COMPONENT__PARENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Code Generation Resource</b></em>' attribute.
@@ -146,7 +126,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__CODE_GENERATION_RESOURCE = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 6;
+	int COMPONENT__CODE_GENERATION_RESOURCE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Documentation Generation Resource</b></em>' attribute.
@@ -155,7 +135,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__DOCUMENTATION_GENERATION_RESOURCE = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 7;
+	int COMPONENT__DOCUMENTATION_GENERATION_RESOURCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Resource Path</b></em>' attribute list.
@@ -164,7 +144,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__RESOURCE_PATH = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 8;
+	int COMPONENT__RESOURCE_PATH = 7;
 
 	/**
 	 * The feature id for the '<em><b>Generation Timeout</b></em>' attribute.
@@ -173,7 +153,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__GENERATION_TIMEOUT = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 9;
+	int COMPONENT__GENERATION_TIMEOUT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Generation Properties</b></em>' attribute list.
@@ -182,7 +162,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__GENERATION_PROPERTIES = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 10;
+	int COMPONENT__GENERATION_PROPERTIES = 9;
 
 	/**
 	 * The feature id for the '<em><b>Generation Services</b></em>' attribute list.
@@ -191,7 +171,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__GENERATION_SERVICES = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 11;
+	int COMPONENT__GENERATION_SERVICES = 10;
 
 	/**
 	 * The feature id for the '<em><b>Generation Arguments</b></em>' attribute list.
@@ -200,7 +180,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__GENERATION_ARGUMENTS = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 12;
+	int COMPONENT__GENERATION_ARGUMENTS = 11;
 
 	/**
 	 * The feature id for the '<em><b>Generation Code</b></em>' attribute.
@@ -209,7 +189,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__GENERATION_CODE = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 13;
+	int COMPONENT__GENERATION_CODE = 12;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -218,7 +198,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = PartyPackage.COMMON_OBJECT_FEATURE_COUNT + 14;
+	int COMPONENT_FEATURE_COUNT = 13;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.amur.impl.CompositeImpl <em>Composite</em>}' class.
@@ -229,15 +209,6 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 */
 	int COMPOSITE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE__ROLES = COMPONENT__ROLES;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -265,15 +236,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -394,15 +356,6 @@ public interface AmurPackage extends EPackage {
 	int CONNECTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -428,15 +381,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTION__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -622,15 +566,6 @@ public interface AmurPackage extends EPackage {
 	int CONNECTION_SOURCE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION_SOURCE__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -656,15 +591,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTION_SOURCE__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION_SOURCE__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -785,15 +711,6 @@ public interface AmurPackage extends EPackage {
 	int CONNECTION_TARGET = 6;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION_TARGET__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -819,15 +736,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONNECTION_TARGET__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION_TARGET__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -948,15 +856,6 @@ public interface AmurPackage extends EPackage {
 	int NODE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__ROLES = COMPOSITE__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -982,15 +881,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int NODE__ID = COMPOSITE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODE__AUTHORS = COMPOSITE__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -1129,15 +1019,6 @@ public interface AmurPackage extends EPackage {
 	int INPUT_PORT = 8;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PORT__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1163,15 +1044,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_PORT__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PORT__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -1292,15 +1164,6 @@ public interface AmurPackage extends EPackage {
 	int OUTPUT_PORT = 9;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PORT__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1326,15 +1189,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int OUTPUT_PORT__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PORT__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -1455,15 +1309,6 @@ public interface AmurPackage extends EPackage {
 	int GATEWAY = 10;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1489,15 +1334,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int GATEWAY__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GATEWAY__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -1636,15 +1472,6 @@ public interface AmurPackage extends EPackage {
 	int ERROR_HANDLER = 11;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ERROR_HANDLER__ROLES = COMPONENT__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1670,15 +1497,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int ERROR_HANDLER__ID = COMPONENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ERROR_HANDLER__AUTHORS = COMPONENT__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -1808,15 +1626,6 @@ public interface AmurPackage extends EPackage {
 	int CONTAINER = 12;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER__ROLES = COMPOSITE__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1842,15 +1651,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTAINER__ID = COMPOSITE__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER__AUTHORS = COMPOSITE__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -1989,15 +1789,6 @@ public interface AmurPackage extends EPackage {
 	int TRANSITION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__ROLES = CONNECTION__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2023,15 +1814,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRANSITION__ID = CONNECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__AUTHORS = CONNECTION__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -2179,15 +1961,6 @@ public interface AmurPackage extends EPackage {
 	int ERROR_TRANSITION = 14;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ERROR_TRANSITION__ROLES = CONNECTION__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2213,15 +1986,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int ERROR_TRANSITION__ID = CONNECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ERROR_TRANSITION__AUTHORS = CONNECTION__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -2360,15 +2124,6 @@ public interface AmurPackage extends EPackage {
 	int CALL = 15;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL__ROLES = CONNECTION__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2394,15 +2149,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int CALL__ID = CONNECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL__AUTHORS = CONNECTION__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -2532,15 +2278,6 @@ public interface AmurPackage extends EPackage {
 	int REFERENCE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__ROLES = CONNECTION__ROLES;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2566,15 +2303,6 @@ public interface AmurPackage extends EPackage {
 	 * @ordered
 	 */
 	int REFERENCE__ID = CONNECTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Authors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE__AUTHORS = CONNECTION__AUTHORS;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Type</b></em>' containment reference.
@@ -2712,25 +2440,6 @@ public interface AmurPackage extends EPackage {
 	int REFERENCE_FEATURE_COUNT = CONNECTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.licensing.Licenseable <em>Licenseable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.licensing.Licenseable
-	 * @see org.nasdanika.amur.impl.AmurPackageImpl#getLicenseable()
-	 * @generated
-	 */
-	int LICENSEABLE = 23;
-
-	/**
-	 * The number of structural features of the '<em>Licenseable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LICENSEABLE_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.nasdanika.amur.ImplementationType <em>Implementation Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2747,7 +2456,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_TYPE__NAME = LICENSEABLE_FEATURE_COUNT + 0;
+	int IMPLEMENTATION_TYPE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2756,7 +2465,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_TYPE__ID = LICENSEABLE_FEATURE_COUNT + 1;
+	int IMPLEMENTATION_TYPE__ID = 1;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -2765,7 +2474,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_TYPE__OWNER = LICENSEABLE_FEATURE_COUNT + 2;
+	int IMPLEMENTATION_TYPE__OWNER = 2;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2774,7 +2483,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_TYPE__DESCRIPTION = LICENSEABLE_FEATURE_COUNT + 3;
+	int IMPLEMENTATION_TYPE__DESCRIPTION = 3;
 
 	/**
 	 * The number of structural features of the '<em>Implementation Type</em>' class.
@@ -2783,7 +2492,7 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMPLEMENTATION_TYPE_FEATURE_COUNT = LICENSEABLE_FEATURE_COUNT + 4;
+	int IMPLEMENTATION_TYPE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.amur.ImplementationTypeProvider <em>Implementation Type Provider</em>}' class.
@@ -3158,7 +2867,7 @@ public interface AmurPackage extends EPackage {
 	 * @see org.nasdanika.amur.impl.AmurPackageImpl#getComponentType()
 	 * @generated
 	 */
-	int COMPONENT_TYPE = 24;
+	int COMPONENT_TYPE = 23;
 
 	/**
 	 * The meta object id for the '<em>Class Loader</em>' data type.
@@ -3168,7 +2877,7 @@ public interface AmurPackage extends EPackage {
 	 * @see org.nasdanika.amur.impl.AmurPackageImpl#getClassLoader()
 	 * @generated
 	 */
-	int CLASS_LOADER = 25;
+	int CLASS_LOADER = 24;
 
 	/**
 	 * The meta object id for the '<em>IMenu Manager</em>' data type.
@@ -3178,7 +2887,7 @@ public interface AmurPackage extends EPackage {
 	 * @see org.nasdanika.amur.impl.AmurPackageImpl#getIMenuManager()
 	 * @generated
 	 */
-	int IMENU_MANAGER = 26;
+	int IMENU_MANAGER = 25;
 
 
 	/**
@@ -3223,17 +2932,6 @@ public interface AmurPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponent_Id();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.nasdanika.amur.Component#getAuthors <em>Authors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Authors</em>'.
-	 * @see org.nasdanika.amur.Component#getAuthors()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_Authors();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.nasdanika.amur.Component#getImplementationType <em>Implementation Type</em>}'.
@@ -3885,17 +3583,6 @@ public interface AmurPackage extends EPackage {
 	EAttribute getCopyImplementationTypeFactory_AppliesTo();
 
 	/**
-	 * Returns the meta object for class '{@link org.nasdanika.licensing.Licenseable <em>Licenseable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Licenseable</em>'.
-	 * @see org.nasdanika.licensing.Licenseable
-	 * @model instanceClass="org.nasdanika.licensing.Licenseable"
-	 * @generated
-	 */
-	EClass getLicenseable();
-
-	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.amur.ComponentType <em>Component Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3982,14 +3669,6 @@ public interface AmurPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT__ID = eINSTANCE.getComponent_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Authors</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__AUTHORS = eINSTANCE.getComponent_Authors();
 
 		/**
 		 * The meta object literal for the '<em><b>Implementation Type</b></em>' containment reference feature.
@@ -4522,16 +4201,6 @@ public interface AmurPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COPY_IMPLEMENTATION_TYPE_FACTORY__APPLIES_TO = eINSTANCE.getCopyImplementationTypeFactory_AppliesTo();
-
-		/**
-		 * The meta object literal for the '{@link org.nasdanika.licensing.Licenseable <em>Licenseable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.licensing.Licenseable
-		 * @see org.nasdanika.amur.impl.AmurPackageImpl#getLicenseable()
-		 * @generated
-		 */
-		EClass LICENSEABLE = eINSTANCE.getLicenseable();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.amur.ComponentType <em>Component Type</em>}' enum.

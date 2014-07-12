@@ -8,11 +8,9 @@ package org.nasdanika.amur;
 
 import java.util.Map;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
-import org.nasdanika.party.CommonObject;
-import org.nasdanika.party.Party;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +23,6 @@ import org.nasdanika.party.Party;
  *   <li>{@link org.nasdanika.amur.Component#getName <em>Name</em>}</li>
  *   <li>{@link org.nasdanika.amur.Component#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.amur.Component#getId <em>Id</em>}</li>
- *   <li>{@link org.nasdanika.amur.Component#getAuthors <em>Authors</em>}</li>
  *   <li>{@link org.nasdanika.amur.Component#getImplementationType <em>Implementation Type</em>}</li>
  *   <li>{@link org.nasdanika.amur.Component#getParent <em>Parent</em>}</li>
  *   <li>{@link org.nasdanika.amur.Component#getCodeGenerationResource <em>Code Generation Resource</em>}</li>
@@ -41,9 +38,10 @@ import org.nasdanika.party.Party;
  *
  * @see org.nasdanika.amur.AmurPackage#getComponent()
  * @model
+ * @extends CDOObject
  * @generated
  */
-public interface Component extends CommonObject {
+public interface Component extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -119,22 +117,6 @@ public interface Component extends CommonObject {
 	 * @generated
 	 */
 	void setId(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Authors</b></em>' reference list.
-	 * The list contents are of type {@link org.nasdanika.party.Party}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Authors</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authors</em>' reference list.
-	 * @see org.nasdanika.amur.AmurPackage#getComponent_Authors()
-	 * @model
-	 * @generated
-	 */
-	EList<Party> getAuthors();
 
 	/**
 	 * Returns the value of the '<em><b>Implementation Type</b></em>' containment reference.
