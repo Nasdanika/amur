@@ -12,12 +12,12 @@ Export-Package: org.nasdanika.amur,
  org.nasdanika.amur.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.gmf.runtime.diagram.ui;visibility:=reexport;bundle-version="1.4.1",
- org.eclipse.gmf.runtime.diagram.ui.render;visibility:=reexport;bundle-version="1.4.1",
- org.eclipse.emf.edit.ui;visibility:=reexport;bundle-version="2.6.0",
- org.eclipse.emf.cdo;visibility:=reexport;bundle-version="4.1.2",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1";visibility:=reexport,
+ org.eclipse.gmf.runtime.diagram.ui.render;bundle-version="1.4.1";visibility:=reexport,
+ org.eclipse.emf.edit.ui;bundle-version="2.6.0";visibility:=reexport,
+ org.eclipse.emf.cdo;bundle-version="4.1.2";visibility:=reexport,
  org.eclipse.help;bundle-version="3.6.0",
- org.nasdanika.common;bundle-version="0.1.0"
+ org.nasdanika.common;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.gmf.runtime.diagram.ui.parts,
  org.eclipse.gmf.runtime.notation

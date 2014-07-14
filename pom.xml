@@ -11,6 +11,7 @@
 	<modules>
 		<module>org.nasdanika.common</module>
 		<module>org.nasdanika.amur</module>
+		<module>org.nasdanika.amur.edit</module>
 		<module>org.nasdanika.amur.feature</module>
 		<module>org.nasdanika.amur.repository</module>
 	</modules>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="model_object" name="Model Object" schema="schema/model_object.exsd"/>
+   <extension-point id="component" name="Component" schema="schema/component.exsd"/>
+   <extension-point id="implementation_type" name="Implementation type" schema="schema/implementation_type.exsd"/>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="urn:org.nasdanika.amur"
+            class="org.nasdanika.amur.provider.AmurItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource
+               org.nasdanika.amur.provider.IFigureFilterProvider"/>
+   </extension>
+   <extension
+         point="org.nasdanika.amur.edit.implementation_type">
+      <implementation_type
+            class="org.nasdanika.amur.impl.NoImplementationType"
+            description="Clears implementation type."
+            icon="icons/full/obj16/eraser.png"
+            id="org.nasdanika.amur.no_implementation_type"
+            name="Clear Implementation Type"
+            target="org.nasdanika.amur.Component">
+      </implementation_type>
+   </extension>
+   <extension
+         point="org.nasdanika.amur.edit.model_object">
+      <model-object class="org.nasdanika.amur.impl.ComponentImpl">
+      </model-object>
+      <model-object
+            class="org.nasdanika.amur.impl.NodeImpl">
+      </model-object>
+      <model-object
+            class="org.nasdanika.amur.impl.CompositeImpl">
+      </model-object>
+      <model-object
+            class="org.nasdanika.amur.impl.CopyImplementationTypeFactoryImpl"
+            name="Copy Implementation Type Factory">
+      </model-object>
+      <model-object
+            class="org.nasdanika.amur.impl.ImplementationTypeCategoryImpl"
+            name="Implementation Type Category">
+      </model-object>
+   </extension>
+
+</plugin>
