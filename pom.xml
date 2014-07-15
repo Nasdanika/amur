@@ -6,12 +6,14 @@
 	<groupId>org.nasdanika.amur</groupId>
 	<artifactId>org.nasdanika.amur.aggregator</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
+	<name>Amur</name>
 	<packaging>pom</packaging>
 
 	<modules>
 		<module>org.nasdanika.common</module>
 		<module>org.nasdanika.amur</module>
 		<module>org.nasdanika.amur.edit</module>
+		<module>org.nasdanika.amur.editor</module>
 		<module>org.nasdanika.amur.feature</module>
 		<module>org.nasdanika.amur.repository</module>
 	</modules>

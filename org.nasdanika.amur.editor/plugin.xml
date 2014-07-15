@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.nasdanika"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.nasdanika.amur.presentation.AmurModelWizardID"
+            name="%_UI_AmurModelWizard_label"
+            class="org.nasdanika.amur.presentation.AmurModelWizard"
+            category="org.nasdanika"
+            icon="icons/full/obj16/AmurModelFile.gif">
+         <description>%_UI_AmurModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated amur -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.nasdanika.amur.presentation.AmurModelWizardID"
+            name="%_UI_AmurModelWizard_label"
+            class="org.nasdanika.amur.presentation.AmurModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AmurModelFile.gif">
+         <description>%_UI_AmurModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.nasdanika.amur.presentation.AmurEditorID"
+            name="%_UI_AmurEditor_label"
+            icon="icons/full/obj16/AmurModelFile.gif"
+            extensions="amur"
+            class="org.nasdanika.amur.presentation.AmurEditor"
+            contributorClass="org.nasdanika.amur.presentation.AmurActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
