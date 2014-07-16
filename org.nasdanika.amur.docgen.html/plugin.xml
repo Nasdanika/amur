@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.nasdanika.amur.component_action">
+      <component_action_with_progress
+            class="org.nasdanika.amur.docgen.html.GenerateAction"
+            component="org.nasdanika.amur.Component"
+            id="org.nasdanika.amur.docgen.html.GenerateAction"
+            name="Generate documentation/HTML">
+      </component_action_with_progress>
+   </extension>
+
+</plugin>

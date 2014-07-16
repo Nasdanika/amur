@@ -1,0 +1,7 @@
+public class CLASS {
+
+
+public String generate(org.nasdanika.amur.Component component, GenerationHelper helper, java.util.Map<Object, Object> context) throws Exception {
+     return "";
+   }
+ }

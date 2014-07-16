@@ -1,0 +1,17 @@
+<%@ jet 
+	package="org.nasdanika.amur.docgen.html" 
+	imports="org.nasdanika.amur.* java.util.* org.apache.commons.lang3.StringEscapeUtils" 
+	class="ComponentRenderer" 
+	skeleton="Renderer.skeleton"		
+%>
+
+<a name="<%=component.getId()%>"><H1><%=helper.genLabel(component)%></H1></a>
+<%=helper.writeDiagram(component)%>
+<%=helper.genDescription(component)%>
+<%=helper.genSource(component)%>
+<%=helper.genTarget(component)%>
+<%=helper.genInboundConnections(component)%>
+<%=helper.genOutboundConnections(component)%>
+<%=helper.genImplementationType(component)%>
+
+

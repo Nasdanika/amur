@@ -1,0 +1,67 @@
+<%@ jet 
+	package="org.nasdanika.amur.docgen.html" 
+	imports="org.nasdanika.amur.* java.util.*" 
+	class="DocumentRenderer" 
+	skeleton="Renderer.skeleton"		
+%>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<style>
+			body {font-family: Arial, sans-serif;}
+		
+			.standard {
+				FONT-SIZE: 12px; 
+				COLOR: #000000; 
+				LINE-HEIGHT: 16px; 
+				FONT-FAMILY: Arial, Helvetica, sans-serif; 
+				TEXT-DECORATION: none
+			}
+			
+			TH.standard { 
+				background: #D1D1FF
+			}
+			
+			TABLE.standard { 
+				background: #202040
+			}
+			
+			TR.standard { 
+				background: #FAFAFF
+			}
+		
+			@media print {
+			
+				.nonprintable {
+					display: none		
+				}
+			
+				TABLE.standard { 
+					border: solid 1px black
+				}
+				
+				TD.standard { 
+					border-bottom: dashed 1px black; 
+					border-right: dashed 1px black; 
+				}
+				
+				TH.standard { 
+					border: solid 1px black
+				}			
+			}
+					
+		</style>		
+	</head>
+	<body>
+		<H1>Model tree</H1>
+		<UL>
+			<%=helper.genModelTree(component)%>
+		</UL>
+	
+		<% for (Component cmp: helper.allContent(component)) { %>
+			<%=new ComponentRenderer().generate(cmp, helper, context)%>
+		<% } %>	
+	</body>
+</html>
