@@ -2357,10 +2357,5 @@
       context="//@diagram">
     <items
         xsi:type="gmfgen:LoadResourceAction"/>
-    <items
-        xsi:type="gmfgen:GenCustomAction"
-        qualifiedClassName="org.nasdanika.amur.diagram.part.LicensingSummaryAction"
-        generateBoilerplate="true"
-        name="Licensing summary"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

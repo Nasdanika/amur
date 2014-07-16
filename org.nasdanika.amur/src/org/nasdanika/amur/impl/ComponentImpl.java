@@ -510,8 +510,6 @@ public class ComponentImpl extends CDOObjectImpl implements Component {
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
-	private static Boolean licensePlugInIsValid;
 	
 	private ClassLoader resourceLoader;
 	

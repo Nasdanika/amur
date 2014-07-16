@@ -2,7 +2,7 @@
 <feature
       id="org.nasdanika.amur.feature"
       label="Amur"
-      version="0.1.0.qualifier"
+      version="1.0.0.qualifier"
       provider-name="Nasdanika">
 
    <description>
@@ -40,6 +40,13 @@
 
    <plugin
          id="org.nasdanika.amur.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.nasdanika.amur.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"

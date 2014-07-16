@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.nasdanika.amur</groupId>
 		<artifactId>org.nasdanika.amur.parent</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../org.nasdanika.amur.parent</relativePath>
 	</parent>
 	<build>

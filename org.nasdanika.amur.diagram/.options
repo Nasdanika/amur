@@ -1,0 +1,7 @@
+# Tracing options for the org.nasdanika.amur.diagram plug-in
+
+# Common issues
+org.nasdanika.amur.diagram/debug=false
+
+# Visual IDs
+org.nasdanika.amur.diagram/debug/visualID=false

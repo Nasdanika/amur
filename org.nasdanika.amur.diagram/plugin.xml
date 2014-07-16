@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="amur_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="amur_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="org.nasdanika.amur.diagram.part.AmurDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/flow.png"
+         extensions="amur_diagram"
+         default="true"
+         class="org.nasdanika.amur.diagram.part.AmurDiagramEditor"
+         matchingStrategy="org.nasdanika.amur.diagram.part.AmurMatchingStrategy"
+         contributorClass="org.nasdanika.amur.diagram.part.AmurDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.nasdanika.amur.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/flow.png"
+  	     category="org.nasdanika"
+  	     class="org.nasdanika.amur.diagram.part.AmurCreationWizard"
+  	     id="org.nasdanika.amur.diagram.part.AmurCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.nasdanika.amur.diagram.InitDiagram"
+            nameFilter="*.amur"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.nasdanika.amur.diagram.part.AmurInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.nasdanika.amur.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="AmurPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="org.nasdanika.amur.diagram.part.AmurDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="AmurPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="org.nasdanika.amur.diagram.part.AmurDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="AmurRender">
+         <Priority name="Lowest"/>
+         <ViewId id="org.nasdanika.amur.diagram.part.AmurDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="org.nasdanika.amur.diagram.providers.AmurMarkerNavigationProvider">
+         <MarkerType name="org.nasdanika.amur.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Amur Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="org.nasdanika.amur.diagram.providers.AmurValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.nasdanika.amur.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.nasdanika.amur.diagram.general"
+            name="%prefpage.org.nasdanika.amur.diagram.general"
+            class="org.nasdanika.amur.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.nasdanika.amur.diagram.appearance"
+            name="%prefpage.org.nasdanika.amur.diagram.appearance"
+            category="org.nasdanika.amur.diagram.general"
+            class="org.nasdanika.amur.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.nasdanika.amur.diagram.connections"
+            name="%prefpage.org.nasdanika.amur.diagram.connections"
+            category="org.nasdanika.amur.diagram.general"
+            class="org.nasdanika.amur.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.nasdanika.amur.diagram.printing"
+            name="%prefpage.org.nasdanika.amur.diagram.printing"
+            category="org.nasdanika.amur.diagram.general"
+            class="org.nasdanika.amur.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.nasdanika.amur.diagram.rulersAndGrid"
+            name="%prefpage.org.nasdanika.amur.diagram.rulersAndGrid"
+            category="org.nasdanika.amur.diagram.general"
+            class="org.nasdanika.amur.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.nasdanika.amur.diagram"
+            labelProvider="org.nasdanika.amur.diagram.sheet.AmurSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.nasdanika.amur.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.nasdanika.amur.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.nasdanika.amur.diagram.sheet.AmurPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.nasdanika.amur.diagram.navigator.AmurAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="org.nasdanika.amur.diagram.providers.AmurViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Amur"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003,3004,3005,3006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="org.nasdanika.amur.diagram.providers.AmurEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Amur"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003,3004,3005,3006"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5002,5003,5004,5005,5006,5007,5008,5009,5010,5014,5011,5012,5013"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfNodeEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.NodeEditPart" id="Node_1000"/>
+         <context elements="Node_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfGatewayEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.GatewayEditPart" id="Gateway_2001"/>
+         <context elements="Gateway_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfContainerEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ContainerEditPart" id="Container_2002"/>
+         <context elements="Container_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfConnectionSourceEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ConnectionSourceEditPart" id="ConnectionSource_2003"/>
+         <context elements="ConnectionSource_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfConnectionTargetEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ConnectionTargetEditPart" id="ConnectionTarget_2004"/>
+         <context elements="ConnectionTarget_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfErrorHandlerEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ErrorHandlerEditPart" id="ErrorHandler_2005"/>
+         <context elements="ErrorHandler_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfOutputPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.OutputPortEditPart" id="OutputPort_2006"/>
+         <context elements="OutputPort_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfInputPortEditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.InputPortEditPart" id="InputPort_2007"/>
+         <context elements="InputPort_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfNode2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.Node2EditPart" id="Node_2008"/>
+         <context elements="Node_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfConnectionSource2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ConnectionSource2EditPart" id="ConnectionSource_3001"/>
+         <context elements="ConnectionSource_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfConnectionTarget2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ConnectionTarget2EditPart" id="ConnectionTarget_3002"/>
+         <context elements="ConnectionTarget_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfContainer2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.Container2EditPart" id="Container_3003"/>
+         <context elements="Container_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfErrorHandler2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.ErrorHandler2EditPart" id="ErrorHandler_3004"/>
+         <context elements="ErrorHandler_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfGateway2EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.Gateway2EditPart" id="Gateway_3005"/>
+         <context elements="Gateway_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="org.nasdanika.amur.diagram.providers.assistants.AmurModelingAssistantProviderOfNode3EditPart">
+         <Priority name="Lowest"/>
+         <object class="org.nasdanika.amur.diagram.edit.parts.Node3EditPart" id="Node_3006"/>
+         <context elements="Node_3006"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="org.nasdanika.amur.diagram.providers.AmurIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="org.nasdanika.amur.diagram.providers.AmurParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.Node_1000"
+               name="%metatype.name.Node_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Node"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.NodeEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.Gateway_2001"
+               name="%metatype.name.Gateway_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Gateway"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.GatewayEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.Container_2002"
+               name="%metatype.name.Container_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Container"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.ContainerEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.ConnectionSource_2003"
+               name="%metatype.name.ConnectionSource_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.ConnectionSource_3001"/>
+            <param name="semanticHint" value="2003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.ConnectionTarget_2004"
+               name="%metatype.name.ConnectionTarget_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.ConnectionTarget_3002"/>
+            <param name="semanticHint" value="2004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.ErrorHandler_2005"
+               name="%metatype.name.ErrorHandler_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.ErrorHandler_3004"/>
+            <param name="semanticHint" value="2005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.OutputPort_2006"
+               name="%metatype.name.OutputPort_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OutputPort"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.OutputPortEditHelper">
+            <param name="semanticHint" value="2006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.InputPort_2007"
+               name="%metatype.name.InputPort_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="InputPort"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.InputPortEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.Node_2008"
+               name="%metatype.name.Node_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.Node_1000"/>
+            <param name="semanticHint" value="2008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.ConnectionSource_3001"
+               name="%metatype.name.ConnectionSource_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConnectionSource"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.ConnectionSourceEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.ConnectionTarget_3002"
+               name="%metatype.name.ConnectionTarget_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConnectionTarget"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.ConnectionTargetEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.Container_3003"
+               name="%metatype.name.Container_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.Container_2002"/>
+            <param name="semanticHint" value="3003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.ErrorHandler_3004"
+               name="%metatype.name.ErrorHandler_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ErrorHandler"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.ErrorHandlerEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.Gateway_3005"
+               name="%metatype.name.Gateway_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.Gateway_2001"/>
+            <param name="semanticHint" value="3005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.Node_3006"
+               name="%metatype.name.Node_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.nasdanika.amur.diagram.Node_1000"/>
+            <param name="semanticHint" value="3006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.Transition_4001"
+               name="%metatype.name.Transition_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Transition"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.TransitionEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.Call_4002"
+               name="%metatype.name.Call_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Call"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.CallEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.ErrorTransition_4003"
+               name="%metatype.name.ErrorTransition_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ErrorTransition"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.ErrorTransitionEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <metamodelType
+               id="org.nasdanika.amur.diagram.Reference_4004"
+               name="%metatype.name.Reference_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Reference"
+               edithelper="org.nasdanika.amur.diagram.edit.helpers.ReferenceEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="urn:org.nasdanika.amur">
+         <specializationType
+               id="org.nasdanika.amur.diagram.GatewayMergeSource_4005"
+               name="%metatype.name.GatewayMergeSource_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4005"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.nasdanika.amur.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.nasdanika.amur.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="org.nasdanika.amur.diagram.TypeContext">
+         <elementType ref="org.nasdanika.amur.diagram.Node_1000"/>
+         <elementType ref="org.nasdanika.amur.diagram.Gateway_2001"/>
+         <elementType ref="org.nasdanika.amur.diagram.Container_2002"/>
+         <elementType ref="org.nasdanika.amur.diagram.ConnectionSource_2003"/>
+         <elementType ref="org.nasdanika.amur.diagram.ConnectionTarget_2004"/>
+         <elementType ref="org.nasdanika.amur.diagram.ErrorHandler_2005"/>
+         <elementType ref="org.nasdanika.amur.diagram.OutputPort_2006"/>
+         <elementType ref="org.nasdanika.amur.diagram.InputPort_2007"/>
+         <elementType ref="org.nasdanika.amur.diagram.Node_2008"/>
+         <elementType ref="org.nasdanika.amur.diagram.ConnectionSource_3001"/>
+         <elementType ref="org.nasdanika.amur.diagram.ConnectionTarget_3002"/>
+         <elementType ref="org.nasdanika.amur.diagram.Container_3003"/>
+         <elementType ref="org.nasdanika.amur.diagram.ErrorHandler_3004"/>
+         <elementType ref="org.nasdanika.amur.diagram.Gateway_3005"/>
+         <elementType ref="org.nasdanika.amur.diagram.Node_3006"/>
+         <elementType ref="org.nasdanika.amur.diagram.Transition_4001"/>
+         <elementType ref="org.nasdanika.amur.diagram.Call_4002"/>
+         <elementType ref="org.nasdanika.amur.diagram.ErrorTransition_4003"/>
+         <elementType ref="org.nasdanika.amur.diagram.Reference_4004"/>
+         <elementType ref="org.nasdanika.amur.diagram.GatewayMergeSource_4005"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.nasdanika.amur.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.nasdanika.amur.diagram"
+           properties="isURIEditorInput"
+           class="org.nasdanika.amur.diagram.part.AmurUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="org.nasdanika.amur.diagram.resourceContent"/>
+			<contentExtension pattern="org.nasdanika.amur.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.nasdanika.amur.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="org.nasdanika.amur.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="org.nasdanika.amur.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="org.nasdanika.amur.diagram.navigator.AmurNavigatorContentProvider" 
+            labelProvider="org.nasdanika.amur.diagram.navigator.AmurNavigatorLabelProvider"
+            icon="icons/obj16/flow.png"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="amur_diagram"/>
+               </and>
+               <instanceof value="org.nasdanika.amur.diagram.navigator.AmurAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="org.nasdanika.amur.diagram.navigator.AmurAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="org.nasdanika.amur.diagram.navigatorSorter" 
+               class="org.nasdanika.amur.diagram.navigator.AmurNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="amur_diagram"/>
+                  </and>
+                  <instanceof value="org.nasdanika.amur.diagram.navigator.AmurAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.nasdanika.amur.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="org.nasdanika.amur.diagram.navigator.AmurDomainNavigatorContentProvider" 
+            labelProvider="org.nasdanika.amur.diagram.navigator.AmurDomainNavigatorLabelProvider"
+            icon="icons/obj16/flow.png"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="amur"/>
+               </and>
+               <instanceof value="org.nasdanika.amur.diagram.navigator.AmurDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="org.nasdanika.amur.diagram.navigator.AmurDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="org.nasdanika.amur.diagram.navigatorActionProvider"
+            class="org.nasdanika.amur.diagram.navigator.AmurNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="org.nasdanika.amur.diagram.navigator.AmurAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="org.nasdanika.amur.diagram.navigatorLinkHelper"
+            class="org.nasdanika.amur.diagram.navigator.AmurNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.nasdanika.amur.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="org.nasdanika.amur.diagram.navigator.AmurAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="org.nasdanika.amur.diagram.part.AmurDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="org.nasdanika.amur.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="org.nasdanika.amur.diagram.updateDiagram"
+         contextId="org.nasdanika.amur.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.nasdanika.amur.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.nasdanika.amur.diagram.part.AmurDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="org.nasdanika.amur.diagram.edit.parts.NodeEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="org.nasdanika.amur.diagram.part.AmurDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.nasdanika.amur.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="org.nasdanika.amur.diagram.part.AmurDiagramEditorID"
+         defaultHandler="org.nasdanika.amur.diagram.part.LoadResourceAction"/>
+   </extension>
+
+               <extension
+                     point="org.eclipse.help.contexts">
+                  <contexts
+                        file="contexthelp.xml">
+                  </contexts>
+               </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>
