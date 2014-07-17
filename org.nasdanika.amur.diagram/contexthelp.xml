@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <contexts>
    <context id="Diagram" title="Amur Diagram Editor">
-      <description>AmurJS is a modeling and JavaScript code generation tool. In AmurJS a software system is modeled as a directed graph in which information processing is performed by passing invocations between vertices (nodes) through edges (connections). Both vertices and edges can perform information processing.
+      <description>Amur is a modeling and code generation tool. In Amur a software system is modeled as a directed graph in which information processing is performed by passing invocations between vertices (nodes) through edges (connections). Both vertices and edges can perform information processing.
 
 Processing can be performed asynchronously and in parallel - execution can fork into several paths and then several execution paths can merge or be joined.</description>
-      <topic href="http://www.nasdanika.org/wiki/doku.php?id=products:amur_js:overview" label="Overview"/>
-      <topic href="http://www.nasdanika.org/wiki/doku.php?id=products:amur_js:notation:start" label="Notation"/>
+      <topic href="https://github.com/Nasdanika/amur/wiki" label="Overview"/>
+      <topic href="https://github.com/Nasdanika/amur/wiki/notation/overview" label="Notation"/>
    </context>
 </contexts>
